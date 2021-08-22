@@ -1,13 +1,10 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+/* Blocks */
+@import url(./blocks/calculator/calculator.css);
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
+/* Elements */
+/* Calculator */
+@import url(./blocks/calculator/__panel/calculator__panel.css);
+@import url(./blocks/calculator/__number-btn/calculator__number-btn.css);
+@import url(./blocks/calculator/__equal-btn/calculator__equal-btn.css);
+
+/* Modifiers */
