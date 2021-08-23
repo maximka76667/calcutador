@@ -4,7 +4,7 @@
 /* Elements */
 /* Calculator */
 @import url(./blocks/calculator/__panel/calculator__panel.css);
-@import url(./blocks/calculator/__number-btn/calculator__number-btn.css);
+@import url(./blocks/calculator/__btn/calculator__btn.css);
 @import url(./blocks/calculator/__equal-btn/calculator__equal-btn.css);
 
 /* Modifiers */
