@@ -33,19 +33,22 @@ function App(props: object) {
   }
 
   const handleKeyDown = (e: React.KeyboardEvent) => {
-    e.preventDefault();
     const { key } = e;
-    if(key.match(/^[\d{1}.]$/)) {
-      updateInputValue(key);
-    }
-    if(key.match(/[+\-*/]/)) {
-      updateAction(key);
-    }
-    if(key.match(/Enter|=/)) {
-      submit();
-    }
-    if(key.match(/Backspace|Delete/)) {
-      deleteLast();
+    if(!key.match(/Tab|F\d{1,2}/)){
+      e.preventDefault();
+      console.log(key);
+      if(key.match(/^[\d{1}.]$/)) {
+        updateInputValue(key);
+      }
+      if(key.match(/[+\-*/]/)) {
+        updateAction(key);
+      }
+      if(key.match(/Enter|=/)) {
+        submit();
+      }
+      if(key.match(/Backspace|Delete/)) {
+        deleteLast();
+      }
     }
   }
 
@@ -75,7 +78,7 @@ function App(props: object) {
   }
 
   function calculate(a: number, b: number): number {
-    let floatFixNumber = prevNumber.length * 100 + inputFieldValue.length * 100;
+    const floatFixNumber = prevNumber.length * 100 + inputFieldValue.length * 100;
     function add(a: number, b: number): number {
       return (a * floatFixNumber + b * floatFixNumber) / floatFixNumber;
     }
