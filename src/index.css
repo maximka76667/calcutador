@@ -1,4 +1,10 @@
+body {
+  padding: 0;
+  margin: 0;
+}
+
 /* Blocks */
+@import url(./blocks/app/app.css);
 @import url(./blocks/calculator/calculator.css);
 
 /* Elements */
@@ -6,5 +12,8 @@
 @import url(./blocks/calculator/__panel/calculator__panel.css);
 @import url(./blocks/calculator/__btn/calculator__btn.css);
 @import url(./blocks/calculator/__equal-btn/calculator__equal-btn.css);
+/* @import url(./blocks/calculator); */
+@import url(./blocks/calculator/__prevNumber/calculator__prevNumber.css);
+@import url(./blocks/calculator/__action/calculator__action.css);
 
 /* Modifiers */
