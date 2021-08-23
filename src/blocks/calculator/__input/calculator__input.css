@@ -7,3 +7,7 @@
   margin: auto 0 0;
   border: 0;
 }
+
+.calculator__input:disabled {
+  color: #000;
+}

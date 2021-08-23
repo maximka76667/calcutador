@@ -75,20 +75,21 @@ function App(props: object) {
   }
 
   function calculate(a: number, b: number): number {
+    let floatFixNumber = prevNumber.length * 100 + inputFieldValue.length * 100;
     function add(a: number, b: number): number {
-      return (a * 100 + b * 100) / 100;
+      return (a * floatFixNumber + b * floatFixNumber) / floatFixNumber;
     }
   
     function deduct(a: number, b: number): number {
-      return (a * 100 - b * 100) / 100;
+      return (a * floatFixNumber - b * floatFixNumber) / floatFixNumber;
     }
 
     function multiply(a: number, b:number): number {
-      return (a * 100 * b) / 100;
+      return (a * floatFixNumber * b) / floatFixNumber;
     }
 
     function divide(a: number, b:number): number {
-      return (a * 100 / b) / 100;
+      return (a * floatFixNumber / b) / floatFixNumber;
     }
 
     switch (action) {
