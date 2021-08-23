@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/maximka76667.github.io/calcutador/static/css/main.130c68d9.chunk.css",
+    "main.js": "/maximka76667.github.io/calcutador/static/js/main.38f60ba4.chunk.js",
+    "main.js.map": "/maximka76667.github.io/calcutador/static/js/main.38f60ba4.chunk.js.map",
+    "runtime-main.js": "/maximka76667.github.io/calcutador/static/js/runtime-main.f073ee9e.js",
+    "runtime-main.js.map": "/maximka76667.github.io/calcutador/static/js/runtime-main.f073ee9e.js.map",
+    "static/js/2.e5098d0d.chunk.js": "/maximka76667.github.io/calcutador/static/js/2.e5098d0d.chunk.js",
+    "static/js/2.e5098d0d.chunk.js.map": "/maximka76667.github.io/calcutador/static/js/2.e5098d0d.chunk.js.map",
+    "static/js/3.59da5cc2.chunk.js": "/maximka76667.github.io/calcutador/static/js/3.59da5cc2.chunk.js",
+    "static/js/3.59da5cc2.chunk.js.map": "/maximka76667.github.io/calcutador/static/js/3.59da5cc2.chunk.js.map",
+    "index.html": "/maximka76667.github.io/calcutador/index.html",
+    "static/css/main.130c68d9.chunk.css.map": "/maximka76667.github.io/calcutador/static/css/main.130c68d9.chunk.css.map",
+    "static/js/2.e5098d0d.chunk.js.LICENSE.txt": "/maximka76667.github.io/calcutador/static/js/2.e5098d0d.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.f073ee9e.js",
+    "static/js/2.e5098d0d.chunk.js",
+    "static/css/main.130c68d9.chunk.css",
+    "static/js/main.38f60ba4.chunk.js"
+  ]
+}
