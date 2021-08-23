@@ -1,4 +1,6 @@
-import React, { FormEvent, useRef } from 'react';
+import React, { ButtonHTMLAttributes, FormEvent, useRef } from 'react';
+import CalculatorPanel from './CalculatorPanel';
+import CalculatorScreen from './CalculatorScreen';
 
 function App(props: object) {
 
@@ -156,43 +158,27 @@ function App(props: object) {
       <main className="content">
       <div className="calculator">
       <form className="calculator__form" onSubmit={handleSubmit}>
-        <div className="calculator__screen">
-          <p className="calculator__prevNumber">{prevNumber}</p>
-          <p className="calculator__action">{action}</p>
-          <input type="text" name="input" className="calculator__input" value={inputFieldValue} readOnly disabled />
-        </div>
-        <div className="calculator__panel">
-          <button className="calculator__btn" type="button" onClick={handleClick}>1</button>
-          <button className="calculator__btn" type="button" onClick={handleClick}>2</button>
-          <button className="calculator__btn" type="button" onClick={handleClick}>3</button>
-          <button className="calculator__btn" type="button" onClick={handleAction}>+</button>
-          <button className="calculator__btn" type="button" onClick={handleReset}>Rst</button>
-          <button className="calculator__btn" type="button" onClick={handleClick}>4</button>
-          <button className="calculator__btn" type="button" onClick={handleClick}>5</button>
-          <button className="calculator__btn" type="button" onClick={handleClick}>6</button>
-          <button className="calculator__btn" type="button" onClick={handleAction}>-</button>
-          <button className="calculator__btn" type="button" onClick={handleDeleteLast}>Dlt</button>
-          <button className="calculator__btn" type="button" onClick={handleClick}>7</button>
-          <button className="calculator__btn" type="button" onClick={handleClick}>8</button>
-          <button className="calculator__btn" type="button" onClick={handleClick}>9</button>
-          <button className="calculator__btn" type="button" onClick={handleAction}>*</button>
-          <button className="calculator__btn" type="button" onClick={handleClearInput}>Clr</button>
-          <button className="calculator__btn" type="button" onClick={handleClick}>0</button>
-          <button className="calculator__btn" type="button" onClick={handleClick}>00</button>
-          <button className="calculator__btn" type="button" onClick={handleClick}>000</button>
-          <button className="calculator__btn" type="button" onClick={handleAction}>/</button>
-          <button className="calculator__btn" type="button" onClick={handleClick}>.</button>
-          <button type="submit" className="calculator__equal-btn">=</button>
-        </div>
+        <CalculatorScreen
+          prevNumber={prevNumber}
+          action={action}
+          inputFieldValue={inputFieldValue}
+        />
+        <CalculatorPanel
+          handleClick={handleClick}
+          handleAction={handleAction}
+          handleReset={handleReset}
+          handleClearInput={handleClearInput}
+          handleDeleteLast={handleDeleteLast}
+        />
       </form>
-      <div className="calculator__info-wrapper">
+      {/* <div className="calculator__info-wrapper">
         <div className={`calculator__info`}>
           <p>Input: {inputFieldValue}</p>
           <p>First Number: {prevNumber}</p>
           <p>Action: {action}</p>
           <p>isResult: {isDone.toString()}</p>
         </div>
-      </div>
+      </div> */}
     </div>
       </main>
     </div>

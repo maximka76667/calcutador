@@ -3,17 +3,28 @@ body {
   margin: 0;
 }
 
+* {
+  box-sizing: border-box;
+}
+
 /* Blocks */
 @import url(./blocks/app/app.css);
 @import url(./blocks/calculator/calculator.css);
 
 /* Elements */
 /* Calculator */
+
+/* Screen */
+@import url(./blocks/calculator/__screen/calculator__screen.css);
+@import url(./blocks/calculator/__prevNumber/calculator__prevNumber.css);
+@import url(./blocks/calculator/__action/calculator__action.css);
+@import url(./blocks/calculator/__input/calculator__input.css);
+
+/* Panel */
 @import url(./blocks/calculator/__panel/calculator__panel.css);
 @import url(./blocks/calculator/__btn/calculator__btn.css);
 @import url(./blocks/calculator/__equal-btn/calculator__equal-btn.css);
+
 /* @import url(./blocks/calculator); */
-@import url(./blocks/calculator/__prevNumber/calculator__prevNumber.css);
-@import url(./blocks/calculator/__action/calculator__action.css);
 
 /* Modifiers */

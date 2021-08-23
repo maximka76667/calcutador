@@ -1,4 +1,4 @@
 .calculator__equal-btn {
-  grid-column: 4;
-  width: 105px;
+  grid-column-start: 4;
+  grid-column-end: 6;
 }
