@@ -36,7 +36,6 @@ function App(props: object) {
     const { key } = e;
     if(!key.match(/Tab|F\d{1,2}/)){
       e.preventDefault();
-      console.log(key);
       if(key.match(/^[\d{1}.]$/)) {
         updateInputValue(key);
       }
