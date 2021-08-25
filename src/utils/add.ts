@@ -1,7 +1,6 @@
-function add(a, b) {
+function add(a: number, b: number): number {
   
   const fix = (a + '').length + (b + '').length + 1;
-  console.log(fix, a, b);
   return +(a + b).toFixed(fix);
 }
 
