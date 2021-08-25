@@ -1,8 +1,9 @@
 .calculator__action {
-  height: 16px;
-  line-height: 16px;
+  height: 20px;
+  line-height: 20px;
   margin: 0;
   position: absolute;
   right: 20px;
-  top: 36px;
+  top: 35px;
+  font-size: 20px;
 }

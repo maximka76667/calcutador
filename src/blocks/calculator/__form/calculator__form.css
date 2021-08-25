@@ -1,0 +1,12 @@
+.calculator__form {
+  padding: 30px;
+  background-color: #fff;
+  border-radius: 20px;
+}
+
+@media (max-width: 500px) {
+  .calculator__form {
+    width: 100vw;
+    padding: 0;
+  }
+}

@@ -3,3 +3,10 @@
   grid-template-columns: repeat(5, 100px);
   grid-template-rows: repeat(5, 100px);
 }
+
+@media (max-width: 500px) {
+  .calculator__panel {
+    grid-template-columns: repeat(5, 20%);
+    grid-template-rows: repeat(5, 64px);
+  }
+}
