@@ -1,6 +1,7 @@
 import React, { FormEvent, useRef } from "react";
 import CalculatorPanel from "./CalculatorPanel";
 import CalculatorScreen from "./CalculatorScreen";
+import { add, deduct, multiply, divide } from '../utils/mathOperations'
 
 function Calculator(props: object) {
 
@@ -19,36 +20,35 @@ function Calculator(props: object) {
   }
 
   function updateInputValue(newValue: string): void {
-    function getNewValue(newValue: string): string {
-      // If starts typing new expression
-      if(isDone) {
-        return newValue;
-      }
-      return inputFieldValue + newValue;
-    }
-
     clear();
-
     setInputFieldValue(getNewValue(newValue));
   }
 
-  const handleKeyDown = (e: React.KeyboardEvent) => {
-    const { key } = e;
-    if(!key.match(/Tab|F\d{1,2}/)){
-      e.preventDefault();
-      if(key.match(/^[\d{1}.]$/)) {
-        updateInputValue(key);
-      }
-      if(key.match(/[+\-*/]/)) {
-        updateAction(key);
-      }
-      if(key.match(/Enter|=/)) {
-        submit();
-      }
-      if(key.match(/Backspace|Delete/)) {
-        deleteLast();
-      }
+  function getNewValue(newValue: string): string {
+    if(isDone) {
+      return newValue;
     }
+    return inputFieldValue + newValue;
+  }
+
+  const handleKeyDown = (e: React.KeyboardEvent): void => {
+    const { key } = e;
+    if(isNeedToHandle(key)) {
+      e.preventDefault();
+      handleNeedToHandleKeys(key);
+    }
+  }
+
+  function isNeedToHandle(key: string): boolean {
+    if(!key.match(/Tab|F\d{1,2}/)) return true
+    return false;
+  }
+
+  function handleNeedToHandleKeys(key: string): void {
+    if(key.match(/^[\d{1}.]$/)) updateInputValue(key);
+    if(key.match(/[+\-*/]/)) updateAction(key);
+    if(key.match(/Enter|=/)) submit();
+    if(key.match(/Backspace|Delete/)) deleteLast();
   }
 
   function handleAction(e: FormEvent): void {
@@ -77,23 +77,6 @@ function Calculator(props: object) {
   }
 
   function calculate(a: number, b: number): number {
-    const floatFixNumber = prevNumber.length * 100 + inputFieldValue.length * 100;
-    function add(a: number, b: number): number {
-      return (a * floatFixNumber + b * floatFixNumber) / floatFixNumber;
-    }
-  
-    function deduct(a: number, b: number): number {
-      return (a * floatFixNumber - b * floatFixNumber) / floatFixNumber;
-    }
-
-    function multiply(a: number, b:number): number {
-      return (a * floatFixNumber * b) / floatFixNumber;
-    }
-
-    function divide(a: number, b:number): number {
-      return (a * floatFixNumber / b) / floatFixNumber;
-    }
-
     switch (action) {
       case '+':
         return add(a, b);

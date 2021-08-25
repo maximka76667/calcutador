@@ -4,11 +4,11 @@ interface Screen {
   inputFieldValue: string
 }
 
-function CalculatorScreen({ prevNumber, action, inputFieldValue }: Screen) {
+function CalculatorScreen(props: Screen) {
   return (
     <div className="calculator__screen">
-      <p className="calculator__action">{prevNumber} {action}</p>
-      <input type="text" name="input" className="calculator__input" value={inputFieldValue} readOnly disabled />
+      <p className="calculator__action">{props.prevNumber} {props.action}</p>
+      <input type="text" name="input" className="calculator__input" value={props.inputFieldValue} readOnly disabled />
     </div>
   )
 }
