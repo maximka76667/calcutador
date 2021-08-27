@@ -59,8 +59,13 @@ function Calculator(props: object) {
 
   function updateAction(action: string) {
     setAction(action);
-    setPrevNumber(inputFieldValue || prevNumber || '0');
     clear();
+    updatePrevNumber();
+  }
+
+  function updatePrevNumber(): void {
+    if(prevNumber) return setPrevNumber(calculate(prevNumber, inputFieldValue) + '');
+    setPrevNumber(checkNumber(inputFieldValue) + '');
   }
 
   function handleSubmit(e: FormEvent): void {
@@ -69,14 +74,21 @@ function Calculator(props: object) {
     submit();
   }
 
+  function checkNumber(number: string): number {
+    if(!isNaN(+number)) return +number
+    return 0;
+  }
+
   function submit(): void {
-    let result = calculate(+prevNumber, +inputFieldValue);
+    let result = calculate(prevNumber, inputFieldValue);
     reset();
     setIsDone(true);
     setInputFieldValue(result + '');
   }
 
-  function calculate(a: number, b: number): number {
+  function calculate(firstNumber: string, secondNumber: string): number {
+    const a: number = checkNumber(firstNumber + '');
+    const b: number = checkNumber(secondNumber + '');
     switch (action) {
       case '+':
         return add(a, b);
